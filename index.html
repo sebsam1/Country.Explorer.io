@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Explorer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="mb-4">Country Explorer</h1>
+        <form id="search-form" class="row g-2 mb-4">
+            <div class="col">
+                <input id="search-input" type="text" class="form-control" placeholder="Enter country name (e.g., Australia)" required>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </form>
+        <div id="status" class="mb-3"></div>
+        <div id="results-container" class="row g-4 d-none">
+            <div class="col-lg-6">
+                <div class="card h-100 shadow-sm">
+                    <img id="country-flag" src="" class="card-img-top flag-img" alt="Country flag">
+                    <div class="card-body">
+                        <h2 id="country-name" class="card-title"></h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><strong>Capital:</strong> <span id="country-capital"></span></li>
+                            <li class="list-group-item"><strong>Region:</strong> <span id="country-region"></span></li>
+                            <li class="list-group-item"><strong>Population:</strong> <span id="country-population"></span></li>
+                            <li class="list-group-item"><strong>Area:</strong> <span id="country-area"></span></li>
+                            <li class="list-group-item"><strong>Languages:</strong> <span id="country-languages"></span></li>
+                            <li class="list-group-item"><strong>Currencies:</strong> <span id="country-currencies"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="map" class="h-100 rounded shadow-sm" style="min-height: 400px;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
